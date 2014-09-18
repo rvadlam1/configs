@@ -1,3 +1,4 @@
+syntax off
 set number
 filetype plugin indent on
 set tabstop=4
