@@ -124,4 +124,4 @@ export FOSSIL_CLONES="/home/ravi/fossil/repo"
 export FOSSIL_LOGIN="ravi:ravi"
 export PATH="/opt/microchip/xc16/v1.23/bin":$PATH
 
-
+test "$(ps -ocommand= -p $PPID | awk '{print $1}')" == 'script' || (script -f $HOME/logs/$(date +"%d-%b-%y_%H-%M-%S")_shell.log)
