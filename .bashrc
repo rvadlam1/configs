@@ -119,12 +119,19 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH="/home/ravi/fossil/tree/pic30-build":$PATH
+export PATH=$PATH:"/home/ravi/fossil/tree/pic30-build"
 export FOSSIL_EXECUTABLE="/usr/local/bin/fossil"
 export FOSSIL_BINARY="/usr/bin/fossil"
 export CVSROOT=:pserver:tejar:tejar@cvs-srv/cvs
 export FOSSIL_CLONES="/home/ravi/fossil/repo"
 export FOSSIL_LOGIN="ravi:ravi"
-export PATH="/opt/microchip/xc16/v1.23/bin":$PATH
+export PATH=$PATH:"/opt/microchip/xc16/v1.23/bin"
 
-test "$(ps -ocommand= -p $PPID | awk '{print $1}')" == 'script' || (script -f $HOME/logs/$(date +"%d-%b-%y_%H-%M-%S")_shell.log)
+# alias o to xdg-open
+alias o='xdg-open'
+
+# alias o to xdg-open
+alias gdiff='meld'
+
+# Log terminal to log files
+#test "$(ps -ocommand= -p $PPID | awk '{print $1}')" == 'script' || (script -f $HOME/logs/$(date +"%d-%b-%y_%H-%M-%S")_shell.log)
