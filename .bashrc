@@ -69,7 +69,7 @@ unset color_prompt force_color_prompt
 case "$TERM" in
 xterm*|rxvt*)
     #PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$#PS1"
-    PS1="\[$(tput bold)\][\u:\W]\[\e[0m\] "
+    #PS1="\[$(tput bold)\][\u:\W]\[\e[0m\] "
     ;;
 *)
     ;;
@@ -125,7 +125,7 @@ export FOSSIL_BINARY="/usr/bin/fossil"
 export CVSROOT=:pserver:tejar:tejar@cvs-srv/cvs
 export FOSSIL_CLONES="/home/ravi/fossil/repo"
 export FOSSIL_LOGIN="ravi:ravi"
-export PATH=$PATH:"/opt/microchip/xc16/v1.23/bin"
+export PATH=$PATH:"/opt/microchip/xc16/v1.24/bin"
 
 # alias o to xdg-open
 alias o='xdg-open'
@@ -135,3 +135,6 @@ alias gdiff='meld'
 
 # Log terminal to log files
 #test "$(ps -ocommand= -p $PPID | awk '{print $1}')" == 'script' || (script -f $HOME/logs/$(date +"%d-%b-%y_%H-%M-%S")_shell.log)
+
+# Change title of terminal
+PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}:${PWD/$HOME/~}\007"'
